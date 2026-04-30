@@ -1,14 +1,14 @@
 #include <SFML/Graphics.hpp>
 #include "Renderer.h"
+#include "Utils.h"
 
 void Renderer::drawCircle(sf::RenderWindow& window,float deltaTime)
 {
 	sf::CircleShape shape(50.f);
 	shape.setFillColor(sf::Color(100, 250, 50));
-	shape.setPosition({x, y});
+	y = gravity.updatePosition(y, deltaTime);
+	shape.setPosition({ x, y });
 	window.draw(shape);
-	v += 9.8f * deltaTime;   // velocity changes over time
-	y += v * deltaTime;      // position changes over time
 }
 
 void Renderer::drawArena(sf::RenderWindow& window)
