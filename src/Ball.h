@@ -6,12 +6,11 @@ class Ball : public PhysicsObject
 {
     sf::Color color;
 	float radius;
-    std::string type = "Ball";
 
 public:
     Gravity gravity;
 
-    Ball(float xPosition, float yPosition,float radius, sf::Color color);
+    Ball(float xPosition, float yPosition, float radius, sf::Color color, bool gravityOn);
     
     void draw(sf::RenderWindow& window );
 };

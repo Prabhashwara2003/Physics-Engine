@@ -1,14 +1,18 @@
 #include "PhysicsObject.h"
 
-PhysicsObject::PhysicsObject(float xPosition, float yPosition)
-	: xPosition(xPosition), yPosition(yPosition)
+PhysicsObject::PhysicsObject(float xPosition, float yPosition, bool gravityOn)
+	: xPosition(xPosition), yPosition(yPosition), gravityOn(gravityOn)
 {
-
+	
 }
 
 void PhysicsObject::update(float deltaTime) {
-	Gravity gravity;
-	yPosition = gravity.applyGravity(yPosition, deltaTime);
+	if (gravityOn)
+	{
+		yPosition = gravity.applyGravity(yPosition, deltaTime);
+	}
+	
+	
 
 }
 
