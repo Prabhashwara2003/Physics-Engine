@@ -1,28 +1,27 @@
-#include <SFML/Graphics.hpp>
 #include "Renderer.h"
-#include "Utils.h"
 
-void Renderer::drawCircle(sf::RenderWindow& window,float deltaTime)
+Renderer::Renderer(sf::RenderWindow& window)
+	: window(window)
 {
-	sf::CircleShape shape(50.f);
-	shape.setFillColor(sf::Color(100, 250, 50));
-	y = gravity.updatePosition(y, deltaTime);
-	shape.setPosition({ x, y });
-	window.draw(shape);
 }
 
-void Renderer::drawArena(sf::RenderWindow& window)
+void Renderer::drawArena()
 {
 	sf::RectangleShape shape({ 1750.f, 850.f });
-	shape.setFillColor(sf::Color(128, 128, 128));   // Gray
+	shape.setFillColor(sf::Color(0, 0, 0));   // Gray
 	shape.setPosition({ 25, 25 });
 	window.draw(shape);
 }
 
-void Renderer::drawBackground (sf::RenderWindow& window)
+void Renderer::drawBackground ()
 {
 	sf::RectangleShape shape({ 1800.f, 900.f });
-	shape.setFillColor(sf::Color(0, 0, 0));   
+	shape.setFillColor(sf::Color(128, 128, 128));   
 	shape.setPosition({ 0, 0 });
 	window.draw(shape);
+}
+
+void Renderer::renderPhysicsObject(PhysicsObject& physicsObject, float deltaTime)
+{
+	physicsObject.draw(window ,deltaTime );
 }
