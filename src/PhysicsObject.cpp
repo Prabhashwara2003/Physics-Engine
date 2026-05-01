@@ -6,3 +6,9 @@ PhysicsObject::PhysicsObject(float xPosition, float yPosition)
 
 }
 
+void PhysicsObject::update(float deltaTime) {
+	Gravity gravity;
+	yPosition = gravity.applyGravity(yPosition, deltaTime);
+
+}
+

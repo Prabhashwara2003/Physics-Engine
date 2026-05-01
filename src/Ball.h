@@ -12,6 +12,7 @@ public:
     Gravity gravity;
 
     Ball(float xPosition, float yPosition,float radius, sf::Color color);
-    void draw(sf::RenderWindow& window , float deltaTime);
+    
+    void draw(sf::RenderWindow& window );
 };
 

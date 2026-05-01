@@ -21,7 +21,7 @@ void Renderer::drawBackground ()
 	window.draw(shape);
 }
 
-void Renderer::renderPhysicsObject(PhysicsObject& physicsObject, float deltaTime)
+void Renderer::renderPhysicsObject(PhysicsObject& physicsObject)
 {
-	physicsObject.draw(window ,deltaTime );
+	physicsObject.draw(window);
 }

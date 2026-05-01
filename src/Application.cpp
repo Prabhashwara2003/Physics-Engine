@@ -42,10 +42,11 @@ void Application::run()
 
 		render.drawBackground();
 		render.drawArena();
-
+		
 		for (PhysicsObject* physicsObject : physicsObjects)
-		 {
-			 render.renderPhysicsObject(*physicsObject,deltaTime);
+		{
+			physicsObject->update(deltaTime);
+			 render.renderPhysicsObject(*physicsObject);
 		}
 
 		window.display();

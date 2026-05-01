@@ -12,7 +12,9 @@ public:
 
 	PhysicsObject(float xPosition , float yPosition );
 
-	virtual void draw(sf::RenderWindow& window , float deltaTime) = 0;
+	void update(float deltaTime);
+
+	virtual void draw(sf::RenderWindow& window ) = 0;
 
 	virtual ~PhysicsObject() = default;
 };
