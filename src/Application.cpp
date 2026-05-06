@@ -13,13 +13,18 @@ Application::Application()
 void Application::run()
 {
 	std::vector<PhysicsObject* > physicsObjects;
-	physicsObjects.push_back(new Ball(500, 100 ,25.f, sf::Color(140, 220, 140),true));
-	physicsObjects.push_back(new Rectangle(0, 875, 25.f, 1800.f, sf::Color(128, 128, 128),false));
-	physicsObjects.push_back(new Rectangle(0, 0, 900.f, 25.f, sf::Color(128, 128, 128), false));
-	physicsObjects.push_back(new Rectangle(0, 0, 25.f, 1800.f, sf::Color(128, 128, 128), false));
-	physicsObjects.push_back(new Rectangle(1775, 0, 900.f, 25.f, sf::Color(128, 128, 128), false));
-	physicsObjects.push_back(new Ball(500, 300, 25.f, sf::Color(0, 0, 100), true));
-	physicsObjects.push_back(new Ball(500, 250, 25.f, sf::Color(100, 100, 100), true));
+	physicsObjects.push_back(new Ball({510, 100}, 25.f, sf::Color(140, 220, 140),true));
+	physicsObjects.push_back(new Rectangle({0, 875}, 25.f, 1800.f, sf::Color(128, 128, 128),false));
+	physicsObjects.push_back(new Rectangle({0, 0}, 900.f, 25.f, sf::Color(128, 128, 128), false));
+	physicsObjects.push_back(new Rectangle({0, 0}, 25.f, 1800.f, sf::Color(128, 128, 128), false));
+	physicsObjects.push_back(new Rectangle({1775, 0}, 900.f, 25.f, sf::Color(128, 128, 128), false));
+	physicsObjects.push_back(new Ball({500, 300}, 25.f, sf::Color(0, 0, 100), true));
+	physicsObjects.push_back(new Ball({1100, 250}, 25.f, sf::Color(100, 100, 100), true));
+	physicsObjects.push_back(new Ball({ 100, 250 }, 25.f, sf::Color(100, 100, 100), true));
+	physicsObjects.push_back(new Ball({ 900, 250 }, 25.f, sf::Color(100, 100, 100), true));
+	physicsObjects.push_back(new Ball({ 800, 250 }, 25.f, sf::Color(100, 100, 100), true));
+	physicsObjects.push_back(new Ball({ 600, 250 }, 25.f, sf::Color(100, 100, 100), true));
+	physicsObjects.push_back(new Ball({ 700, 250 }, 25.f, sf::Color(100, 100, 100), true));
 
 	std::vector<Ball*> balls;
 

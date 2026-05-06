@@ -7,14 +7,13 @@ class PhysicsObject
 	
 
 public:
-	float xPosition;
-	float yPosition;
+	sf::Vector2f position;
 	Gravity gravity;
-	float velocity =0;
+	sf::Vector2f velocity = sf::Vector2f(0, 0);
 
 	bool gravityOn;
 
-	PhysicsObject(float xPosition , float yPosition , bool gravityOn );
+	PhysicsObject(sf::Vector2f position , bool gravityOn );
 
 	virtual void update(float deltaTime);
 

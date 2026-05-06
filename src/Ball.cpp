@@ -1,7 +1,7 @@
 #include "Ball.h"
 
-Ball::Ball(float xPosition, float yPosition, float radius, sf::Color color, bool gravityOn)
-	:PhysicsObject(xPosition, yPosition ,gravityOn), radius(radius), color(color)
+Ball::Ball(sf::Vector2f position, float radius, sf::Color color, bool gravityOn)
+	:PhysicsObject(position ,gravityOn), radius(radius), color(color)
 {	
 	
 }
@@ -10,21 +10,32 @@ void Ball::draw(sf::RenderWindow& window )
 {
 	sf::CircleShape shape(radius);
 	shape.setFillColor(color);
-	shape.setPosition({ xPosition , yPosition});
+	shape.setPosition(position);
 	window.draw(shape);
 }
 
 void Ball::update(float deltaTime) {
 	if (gravityOn)
 	{
-		velocity = gravity.applyGravity(yPosition, deltaTime, velocity);
-		if (yPosition >= 825)
+		velocity = gravity.applyGravity(position.y, deltaTime, velocity);
+		if (position.y >= 825)
 		{
-			yPosition = 825;
-			velocity = -velocity * .8f;
+			position.y = 825;
+			velocity.y = -velocity.y * .8f;
 		}
-		yPosition += velocity * deltaTime * 100;
+		if (position.x >= 1725)
+		{
+			position.x = 1725;
+			velocity.x = -velocity.x * .8f;
+		}
+		if (position.x <= 25)
+		{
+			position.x = 25;
+			velocity.x = -velocity.x * .8f;
+		}
+		position.y += velocity.y * deltaTime * 100;
+		position.x += velocity.x * deltaTime * 100;
 	}
 
-	midpoint = { xPosition + radius , yPosition + radius };
+	midpoint = { position.x + radius , position.y + radius };
 }

@@ -1,9 +1,9 @@
 #include "Gravity.h"
 
-float Gravity::applyGravity(float y, float deltaTime, float velocity)
+sf::Vector2f Gravity::applyGravity(float y, float deltaTime, sf::Vector2f velocity)
 {
-	velocity += downacceleration * deltaTime;
-	y += velocity * deltaTime * 100;
+	velocity.y += downacceleration * deltaTime;
+	
 
-	return velocity;
+	return sf::Vector2f(velocity);
 }

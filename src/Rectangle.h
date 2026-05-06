@@ -8,7 +8,7 @@ class Rectangle : public PhysicsObject
 	float width;
 
 public:
-	Rectangle(float xPosition, float yPosition, float height, float width, sf::Color color, bool gravityOn);
+	Rectangle(sf::Vector2f position, float height, float width, sf::Color color, bool gravityOn);
 
 	void draw(sf::RenderWindow& window);
 };

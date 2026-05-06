@@ -6,7 +6,6 @@
 class Collision
 {
 public:
-	void addCollision(std::vector<Ball*>& balls);
 	void checkCollision(std::vector<Ball*>& balls);
 };
 
